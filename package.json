@@ -1,0 +1,17 @@
+{
+  "name": "mining-ws-proxy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "High-performance WebSocket mining proxy",
+  "main": "mining-ws-proxy.js",
+  "scripts": {
+    "start": "node mining-ws-proxy.js",
+    "start:dev": "POOL_HOST=pool.example.com POOL_PORT=3333 node mining-ws-proxy.js"
+  },
+  "dependencies": {
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.44.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
