@@ -179,8 +179,10 @@ if (cluster.isPrimary) {
         if (ws.alive) { ws.alive = false; ws.close() }
         return
       }
-
-      socket.write(Buffer.from(message))
+    
+      const buf = Buffer.from(message)
+      const data = buf[buf.length - 1] === 0x0a ? buf : Buffer.concat([buf, Buffer.from('\n')])
+      socket.write(data)
     },
 
     // ── WS backpressure drained → resume pool reads ───────────────────────────
